@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Go-Moku", "Go-Moku.csproj", "{F27CB9E8-8912-4FCC-8E20-E37F9DB585B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F27CB9E8-8912-4FCC-8E20-E37F9DB585B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F27CB9E8-8912-4FCC-8E20-E37F9DB585B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F27CB9E8-8912-4FCC-8E20-E37F9DB585B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F27CB9E8-8912-4FCC-8E20-E37F9DB585B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9860ABFB-E16B-42B2-96B5-868C921680E6}
+	EndGlobalSection
+EndGlobal
