@@ -23,7 +23,10 @@ using CustomMessageBox;
  * 
  * ----------------------------------------------------------------------------
  * 
- * Revised: yyyy-mm-dd - xxxx.
+ * Revised: 2021-12-02 - Changed computer winning message to reflect may not be
+ *                       playing just 'nought' stones anymore.  Change made to
+ *                       allow for 'switching' sides and did not catch the win
+ *                       message till after publishing.
  * 
  */
 namespace Go_Moku
@@ -669,8 +672,8 @@ namespace Go_Moku
                 playing = false;
                 if (gameWon)
                 {
-                    MsgBox.Show(this, "Nought stones wins (you lose).", this.Text, MessageBoxButtons.OK,
-                        MessageBoxIcon.Information, MessageBoxIcon.Information);
+                    MsgBox.Show(this, player.ToString() + " stones wins (you lose).", this.Text,
+                        MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxIcon.Information);
                     stats.GameLost(0);
                     autoPlay = false;
                 }
