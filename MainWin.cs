@@ -27,6 +27,8 @@ using CustomMessageBox;
  *                       playing just 'nought' stones anymore.  Change made to
  *                       allow for 'switching' sides and did not catch the win
  *                       message till after publishing.
+ *          2022-01-16 - Fixed a minor nit with the display of the moves made
+ *                       list.
  * 
  */
 namespace Go_Moku
@@ -593,7 +595,8 @@ namespace Go_Moku
         {
             MovesDlg dlg = new MovesDlg
             {
-                Moves = movesMade
+                Moves = movesMade,
+                GameWon = gameWon
             };
 
             _ = dlg.ShowDialog();
