@@ -29,6 +29,9 @@ using CustomMessageBox;
  *                       message till after publishing.
  *          2022-01-16 - Fixed a minor nit with the display of the moves made
  *                       list.
+ *          2022-01-18 - Changed Tuple to a Point in determining next move for
+ *                       both hint and play.  Makes more sense for the logic
+ *                       flow.
  * 
  */
 namespace Go_Moku
@@ -216,7 +219,7 @@ namespace Go_Moku
             toggledAutoOrSwitch = false;
         }
 
-        private Tuple<int, int> FindMove()
+        private Point FindMove()
         {
             BoardType opponent = OpponentColor();
             int max = -1, valu;
@@ -242,7 +245,7 @@ namespace Go_Moku
                     }
                 }
 
-            return Tuple.Create(mx + 1, my + 1);
+            return new Point(mx + 1, my + 1);
         }
 
         private void DisplayMoveMade()
@@ -379,8 +382,8 @@ namespace Go_Moku
 
         private void CustomXXXMove()
         {
-            Tuple<int, int> move = FindMove();
-            DisplayNewCurPos(move.Item1, move.Item2);
+            Point move = FindMove();
+            DisplayNewCurPos(move.X, move.Y);
             MakeMove(curX - 1, curY - 1);
             if (gameWon) movesMade.Enqueue(player.ToString() + " won!");
         }
@@ -473,8 +476,8 @@ namespace Go_Moku
         {
             if (!playing && !autoPlay && !gameWon)
             {
-                Tuple<int, int> hint = FindMove();
-                DisplayNewCurPos(hint.Item1, hint.Item2);
+                Point hint = FindMove();
+                DisplayNewCurPos(hint.X, hint.Y);
                 btnPlay.Focus();
             }
         }
