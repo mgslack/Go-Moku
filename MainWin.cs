@@ -11,8 +11,8 @@ using GameStatistics;
 using CustomMessageBox;
 
 /*
- * Game of Go-Moku, using old school 19x19 Go board rather than modern 15x15 board.  Based
- * move evaluation and hints on Borland's Turbo Gameworks toolbox version.
+ * Game of Go-Moku, using old school 19x19 Go board rather than modern 15x15 board.
+ * Based move evaluation and hints on Borland's Turbo Gameworks toolbox version.
  * 
  * A game is started when the program loads.  Player always starts and is the
  * white (cross) stones.  Has auto play feature so can have computer play both
@@ -32,6 +32,13 @@ using CustomMessageBox;
  *          2022-01-18 - Changed Tuple to a Point in determining next move for
  *                       both hint and play.  Makes more sense for the logic
  *                       flow.
+ *          2022-02-11 - Went around and around on slight issue with move tracking
+ *                       and auto-play.  Was going to turn off auto-play toggle and
+ *                       make it one way and zero moves made count, but decided on
+ *                       a different approach.  Left auto-play toggle in effect and
+ *                       track moves of auto-played player while in auto-play
+ *                       mode.  This should make the moves made / least moves counts
+ *                       right and fair and auto-play is still toggleable.
  * 
  */
 namespace Go_Moku
@@ -641,6 +648,7 @@ namespace Go_Moku
             if (autoPlay && !gameWon)
             {
                 CustomXXXMove();
+                stats.MoveMade(); // count moves like still the player...
                 if (gameWon)
                 {
                     MsgBox.Show(this, "Auto-played player won.", this.Text, MessageBoxButtons.OK,
